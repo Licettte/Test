@@ -20,5 +20,10 @@ $\text{\ \color{lightblue}\  Для запуска:\}$
 
 ____
 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/544b97c8-c3e6-4d57-8c68-f34b92bc8659" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/1b029cdf-a4da-46c9-9d75-240351e50532" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/876bc13d-6a8e-40fd-b9b4-4b09177419de" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/1b8bda5e-1e11-47be-899a-ab3283b4081e" />
 
- <img width="864" alt="image" src="https://github.com/user-attachments/assets/5b6f547c-3356-4ef0-a3ef-8b147455a0c3" />
+
+
