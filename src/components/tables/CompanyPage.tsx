@@ -8,7 +8,7 @@ import {ModalCompany} from "./ModalCompany";
 
 export const CompanyPage: FC = () => {
     const companies = useAppSelector((state) => state.companyReducer.companies);
-    const {toggleCompanyChecked, toggleAllCompanyChecked, deleteCompany , deleteAllCompany} = useActions()
+    const {toggleCompanyChecked, toggleAllCompanyChecked, deleteCompany , deleteSelectedCompany} = useActions()
 
     const handleCheckboxChange = (id: string) => {
         toggleCompanyChecked({id: id});
@@ -23,10 +23,9 @@ export const CompanyPage: FC = () => {
         deleteCompany({companyId: id});
     };
 
-    const handleDeleteAllCompany = () => {
-        deleteAllCompany();
+    const handleDeleteSelectedCompany = (ids: string[]) => {
+        deleteSelectedCompany({companyIds:ids});
     };
-
     return (
         <Flex gap={35} dir= 'column' align={'flex-end'}>
             <Table<ColumnCompanyType>
@@ -35,7 +34,7 @@ export const CompanyPage: FC = () => {
                 handleCheckboxChange={handleCheckboxChange}
                 handleSelectAll={handleSelectAll}
                 handleDeleteCompany={handleDeleteCompany}
-            handleDeleteAllCompany={handleDeleteAllCompany}
+                handleDeleteSelectedCompany={handleDeleteSelectedCompany}
             />
             <ModalCompany />
         </Flex>

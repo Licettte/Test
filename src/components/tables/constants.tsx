@@ -19,5 +19,5 @@ export const columns: TableColumn<ColumnCompanyType>[] = [
         width: 100,
     },
     {title: 'Изменить', dataIndex: 'edit', key: 'edit', width: 100},
-    {title: '', dataIndex: 'delete', key: 'delete', width: 130},
+    {title: 'Удалить', dataIndex: 'delete', key: 'delete', width: 100},
 ];

@@ -64,8 +64,11 @@ export const companySlice = createSlice({
             delete state.companies[companyId];
         },
 
-        deleteAllCompany(state) {
-            state.companies = {};
+        deleteSelectedCompany(state, action: PayloadAction<{companyIds: string[]}>) {
+            const { companyIds } = action.payload;
+            companyIds.forEach(companyId => {
+                delete state.companies[companyId];
+            });
 
         },
 

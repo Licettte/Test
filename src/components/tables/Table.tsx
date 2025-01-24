@@ -13,7 +13,8 @@ interface TableProps<T> {
     handleCheckboxChange: (id: string) => void;
     handleSelectAll: (checkedAll: boolean) => void;
     handleDeleteCompany: (id: string) => void;
-    handleDeleteAllCompany: () => void;
+    handleDeleteSelectedCompany: (id: string[]) => void;
+
 }
 
 export const Table = <T extends Record<string, any>>({
@@ -23,7 +24,7 @@ export const Table = <T extends Record<string, any>>({
                                                          handleCheckboxChange,
                                                          handleSelectAll,
                                                          handleDeleteCompany,
-                                                         handleDeleteAllCompany,
+                                                         handleDeleteSelectedCompany,
                                                      }: TableProps<T>) => {
     const showNotData = (
         <TableRow>
@@ -61,8 +62,14 @@ export const Table = <T extends Record<string, any>>({
     ));
 
     const allChecked = dataSource.length ? dataSource.every((item) => item.checked) : false;
+    const selectedIds = dataSource.reduce<string[]>((ids, item) => {
+        if (item.checked) {
+            ids.push(item.id);
+        }
+        return ids;
+    }, []) ?? [];
 
-    console.log(allChecked, "allChecked")
+
     const tableHeader = (
         <TableRow>
             {columns.map((column) => (
@@ -74,11 +81,6 @@ export const Table = <T extends Record<string, any>>({
                                 checked={allChecked}
                                 onChange={(e) => handleSelectAll(e.target.checked)}
                             />
-                        )}
-                        {column.dataIndex === 'delete' && (
-                            <Button disabled={!allChecked}
-                                    onClick={handleDeleteAllCompany} height={'20px'}
-                                    width={'150px'}>{allChecked ? 'Удалить всё' : 'Удалить'} </Button>
                         )}
 
                     </Flex>
@@ -92,6 +94,19 @@ export const Table = <T extends Record<string, any>>({
             <TableContent>
                 <TableHead>{columns.length > 0 && tableHeader}</TableHead>
                 <tbody>{dataSource.length > 0 ? showData : showNotData}</tbody>
+
+                {
+                    (allChecked || selectedIds.length) &&
+                    <TableRow>
+                        <TableCell colSpan={columns.length}> <Button
+                            style={{width: '100%', height: '100%', borderRadius: "0px"}}
+                            onClick={() => handleDeleteSelectedCompany(selectedIds)}>
+                            Удалить выбранное
+                        </Button>
+                        </TableCell>
+                    </TableRow>
+                }
+
             </TableContent>
         </TableWrapper>
     );
