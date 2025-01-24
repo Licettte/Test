@@ -26,6 +26,7 @@ export const CompanyPage: FC = () => {
     const handleDeleteSelectedCompany = (ids: string[]) => {
         deleteSelectedCompany({companyIds:ids});
     };
+
     return (
         <Flex gap={35} dir= 'column' align={'flex-end'}>
             <Table<ColumnCompanyType>

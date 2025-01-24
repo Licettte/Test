@@ -6,13 +6,13 @@ import {Main} from "../../main/Main";
 export const Layout = () => {
     return (
         <WrapperLayout >
+
             <WrapperHeader>
                 <Header/>
             </WrapperHeader>
 
             <WrapperContent>
                 <Main/>
-
             </WrapperContent>
 
             <WrapperFooter>
