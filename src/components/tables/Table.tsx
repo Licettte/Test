@@ -96,7 +96,7 @@ export const Table = <T extends Record<string, any>>({
                 <tbody>{dataSource.length > 0 ? showData : showNotData}</tbody>
 
                 {
-                    (allChecked || selectedIds.length) &&
+                    (allChecked || selectedIds.length) ?
                     <TableRow>
                         <TableCell colSpan={columns.length}> <Button
                             style={{width: '100%', height: '100%', borderRadius: "0px"}}
@@ -105,6 +105,7 @@ export const Table = <T extends Record<string, any>>({
                         </Button>
                         </TableCell>
                     </TableRow>
+                        : null
                 }
 
             </TableContent>
