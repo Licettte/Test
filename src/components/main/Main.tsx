@@ -1,68 +1,28 @@
-import {MainCard} from "./MainCard";
-import React, {useState, useEffect} from 'react';
-import {ThreeColumn} from "../../styles";
-import {MainCardType, URL_GET_ITEM} from "../../utils";
-import {ModalAddItem, ModalInfoItem} from "../modal";
+import {CompanyPage} from "../tables/CompanyPage";
+import {useEffect} from "react";
+import {companyUrl} from "../../utils";
+import {Company} from "../../store/company/companyTypes";
+import {useActions} from "../../store/actions";
 
 export const Main = () => {
 
-    const [wiredHeadphones, setWiredHeadphones] = useState<MainCardType[]>([])
-    const [wirelessHeadphones, setWirelessHeadphones] = useState<MainCardType[]>([])
-    const [isLoaded, setIsLoaded] = useState<boolean>(false)
-    const [openInfoModal, setOpenInfoModal] = useState({
-        isOpened: false,
-        card: {
-            img: '',
-            title: '',
-            price: 0,
-            discount: 0,
-            rating: 0,
-            id: 0,
-            quantity: 0,
-            setOpenInfoModal: null
-        }
-    })
+    const {setCompanies} = useActions()
 
-    useEffect(
-        () => {
-            fetch(URL_GET_ITEM)
-                .then(response => response.json())
-                .then(data => {
-                    return setWiredHeadphones(data.wiredHeadphones),
-                        setWirelessHeadphones(data.wirelessHeadphones)
-                })
-                .catch((error) => {
-                    console.error(error);
-                })
-                .finally(() => {
-                    setIsLoaded(true)
-                });
+    useEffect(() => {
+        fetch(companyUrl)
+            .then((response) => response.json())
+            .then((data: Company[]) => {
+                const dataWithChecked = data.map((item) => ({
+                    ...item,
+                    id: String(item.id),
+                    checked: false,
+                    edit: false,
+                    delete: false
+                }));
+                setCompanies(dataWithChecked);
+            })
+            .catch();
+    }, []);
 
-        }, []);
-
-
-    const getCards = (headphones: MainCardType[]) => {
-        return (headphones.map(card => <MainCard key={card.id} {...card} setOpenModal={setOpenInfoModal}/>))
-    }
-    console.log(wiredHeadphones, "wiredHeadphones")
-    return (
-        <>
-            {!isLoaded ? "Loading" :
-                <>
-                    <h2>Наушники</h2>
-                    <ThreeColumn>
-                        {getCards(wiredHeadphones)}
-                    </ThreeColumn>
-
-                    <h2>Беспроводные наушники</h2>
-                    <ThreeColumn>
-                        {getCards(wirelessHeadphones)}
-                    </ThreeColumn>
-                </>
-            }
-            {openInfoModal.isOpened ?
-                <ModalInfoItem setOpenInfoModal={setOpenInfoModal} openInfoModal={openInfoModal}/> : null}
-            <ModalAddItem/>
-        </>
-    )
+    return <CompanyPage/>
 }

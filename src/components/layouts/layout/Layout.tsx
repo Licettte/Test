@@ -1,25 +1,24 @@
-
-import {Outlet} from "react-router-dom";
 import {Header} from "../header/Header";
 import {Footer} from "../footer/Footer";
-import {Bottom, Content, Top} from "./LayoutStyle";
-import {Container} from "../../../styles";
+import {WrapperContent, WrapperFooter, WrapperHeader, WrapperLayout} from "./styles";
+import {Main} from "../../main/Main";
 
 export const Layout = () => {
     return (
-        <Container $direction='column' $padding='0 20px'>
-            <Top>
+        <WrapperLayout >
+            <WrapperHeader>
                 <Header/>
-            </Top>
+            </WrapperHeader>
 
-            <Content>
-                <Outlet/>
-            </Content>
+            <WrapperContent>
+                <Main/>
 
-            <Bottom>
+            </WrapperContent>
+
+            <WrapperFooter>
                 <Footer/>
-            </Bottom>
+            </WrapperFooter>
 
-        </Container>
+        </WrapperLayout>
     )
 }

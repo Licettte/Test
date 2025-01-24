@@ -1,8 +1,6 @@
-
-import  { createGlobalStyle } from 'styled-components';
-import {FONT_BOLD_25, FONT_REGULAR_17, FONT_SEMI_BOLD_20} from "./fonts";
-import {BACKGROUND_COLOR, DARK_2XL_COLOR, DARK_M_COLOR} from "./colors";
+import {createGlobalStyle} from 'styled-components';
 import {mobile} from "./variables";
+import {fonts} from "./fonts";
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -14,14 +12,14 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     html {
-        font-size: 10px;
+        font-size: 15px;
     }
 
     body {
         margin: auto;
         max-width: 1110px;
         height: 100%;
-        background-color: ${BACKGROUND_COLOR};
+ 
     }
 
     a {
@@ -29,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: inherit;
         cursor: pointer;
     }
-   
+
     ul {
         list-style: none;
         margin: 0;
@@ -38,10 +36,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     li {
-        ${FONT_REGULAR_17};
-        color: ${DARK_2XL_COLOR};
-        padding: 0 0 14px 0;
-
+        padding: 0
     }
 
     button {
@@ -58,7 +53,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h1 {
-        ${FONT_BOLD_25};
+        ${fonts.FONT_BOLD_25};
         margin: 0;
     }
 
@@ -68,17 +63,16 @@ export const GlobalStyle = createGlobalStyle`
             font-weight: 700;
             margin: 0 44px;
         }
-        ${FONT_SEMI_BOLD_20};
+        ${fonts.FONT_BOLD_15};
         margin: 0;
-        color: ${DARK_M_COLOR}
     }
 
     h3 {
-        font-size: 1.75rem;
+        ${fonts.FONT_BOLD_15};
     }
 
     h4 {
-        font-size: 1.75rem;
+        ${fonts.FONT_SEMI_BOLD_17};
     }
 
     h5 {
@@ -86,7 +80,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h6 {
-        ${FONT_REGULAR_17};
+        ${fonts.FONT_MEDIUM_15};
         margin: 0;
         padding: 0;
     }

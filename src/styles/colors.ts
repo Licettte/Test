@@ -1,8 +1,7 @@
-export const PRIMARY_COLOR = "#FFCE7F";
-export const BRIGHT_PRIMARY_COLOR = "#FFA542";
-export const BACKGROUND_COLOR = "#EAEAEA";
-export const LIGHT_COLOR = "#FFFFFF";
-export const DARK_M_COLOR = "#838383";
-export const DARK_L_COLOR = "#1C1C27";
-export const DARK_XL_COLOR = "#101010";
-export const DARK_2XL_COLOR = "#000000";
+export const colors={
+    primary_color: "#96b9ee",
+    dark_primary_color: "#6f88b0",
+    light_color: "rgba(35,250,94,0.4)",
+    dark_l_color: "#1C1C27",
+    dark_xl_color: "#101010"
+} as const

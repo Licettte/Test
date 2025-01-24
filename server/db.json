@@ -1,80 +1,35 @@
 {
-  "headphones": {
-    "wiredHeadphones": [
-      {
-        "img": "https://ucarecdn.com/1c77a62e-898d-422e-b945-f94360ed8912/appleBYZS852I.svg",
-        "title": "Apple BYZ S8521",
-        "price": 2927,
-        "discount": 3527,
-        "rating": 4.7,
-        "id": 1
-      },
-      {
-        "img": "https://ucarecdn.com/47fc32c5-b21e-4ec2-8c38-e8f8a0d6e140/appleEarPods.svg",
-        "title": "Apple EarPods",
-        "price": 2327,
-        "discount": null,
-        "rating": 4.5,
-        "id": 2
-      },
-      {
-        "img": "https://ucarecdn.com/9bc81251-d191-4a6b-bb65-38218eb5b684/appleEarPodsinase.svg",
-        "title": "Apple EarPods",
-        "price": 2327,
-        "discount": null,
-        "rating": 4.5,
-        "id": 3
-      },
-      {
-        "img": "https://ucarecdn.com/1c77a62e-898d-422e-b945-f94360ed8912/appleBYZS852I.svg",
-        "title": "Apple BYZ S8521",
-        "price": 2927,
-        "discount": null,
-        "rating": 4.7,
-        "id": 4
-      },
-      {
-        "img": "https://ucarecdn.com/47fc32c5-b21e-4ec2-8c38-e8f8a0d6e140/appleEarPods.svg",
-        "title": "Apple EarPods",
-        "price": 2327,
-        "discount": null,
-        "rating": 4.5,
-        "id": 5
-      },
-      {
-        "img": "https://ucarecdn.com/9bc81251-d191-4a6b-bb65-38218eb5b684/appleEarPodsinase.svg",
-        "title": "Apple EarPods",
-        "price": 2327,
-        "discount": null,
-        "rating": 4.5,
-        "id": 6
-      }
-    ],
-    "wirelessHeadphones": [
-      {
-        "img": "https://ucarecdn.com/bc81a6a5-d672-468f-b65c-84cedaf94c4b/AppleEar.svg",
-        "title": "Apple AirPods",
-        "price": 9527,
-        "discount": null,
-        "rating": 4.7,
-        "id": 7
-      },
-      {
-        "img": "https://ucarecdn.com/1111f1a5-9e03-49c0-bd7b-f3fefae5cde3/GERLAXGH04.svg",
-        "title": "GERLAX GH-04",
-        "price": 6527,
-        "discount": null,
-        "rating": 4.7,
-        "id": 8
-      },
-      {
-        "img": "https://ucarecdn.com/54631ee2-8d85-42ee-9f5b-54d1596e9d60/BOROFONEBO4.svg",
-        "title": "BOFOFONE BO4",
-        "price": 7527,
-        "discount": null,
-        "rating": 4.7,
-        "id": 9
-      }
-    ]
-  }
+  "companies": [
+    {
+      "id": 0,
+      "title":"АкросЭ",
+      "address": "Санкт-Петербург, ул. Короленко, 7, офис 27"
+    },
+    {
+      "id": 1,
+      "title": "Аксиома",
+      "address": "Санкт-Петербург, ул. Цветочная, 6"
+    },
+    {
+      "id": 2,
+      "title": "Теос",
+      "address": "Санкт-Петербург, Литейный просп., 9"
+     },
+    {
+      "id": 3,
+      "title": "Эм-421",
+      "address": "Санкт-Петербург, ул. Ленсовета, 8"
+
+    },
+    {
+      "id": 4,
+      "title": "Эдем",
+      "address": "Санкт-Петербург, ул. Садовая, 39/41"
+    },
+    {
+      "id": 5,
+      "title": "Энергия",
+      "address": "Санкт-Петербург, пл. А.Невского, 2"
+    }
+  ]
 }
