@@ -21,5 +21,4 @@ $\text{\ \color{lightblue}\  Для запуска:\}$
 ____
 
 
- src="<img width="864" alt="image" src="https://github.com/user-attachments/assets/5b6f547c-3356-4ef0-a3ef-8b147455a0c3" />
-" width="450" />
+ <img width="864" alt="image" src="https://github.com/user-attachments/assets/5b6f547c-3356-4ef0-a3ef-8b147455a0c3" />
