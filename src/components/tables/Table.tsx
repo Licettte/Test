@@ -14,7 +14,6 @@ interface TableProps<T> {
     handleSelectAll: (checkedAll: boolean) => void;
     handleDeleteCompany: (id: string) => void;
     handleDeleteSelectedCompany: (id: string[]) => void;
-
 }
 
 export const Table = <T extends Record<string, any>>({
@@ -48,7 +47,6 @@ export const Table = <T extends Record<string, any>>({
                                 onChange={(e) => handleSelectAll(e.target.checked)}
                             />
                         )}
-
                     </Flex>
                 </TableCell>
             ))}
