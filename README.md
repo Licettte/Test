@@ -11,6 +11,7 @@ $\text{\ \color{lightblue}\   Технологии:\}$
 4. React-router-dom
 5. Concurrently
 6. Json-server
+7. Redux
 ```
 $\text{\ \color{lightblue}\  Для запуска:\}$  
 ```javaScript
