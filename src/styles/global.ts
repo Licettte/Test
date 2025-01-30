@@ -1,5 +1,4 @@
 import {createGlobalStyle} from 'styled-components';
-import {mobile} from "./variables";
 import {fonts} from "./fonts";
 
 export const GlobalStyle = createGlobalStyle`
@@ -58,13 +57,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h2 {
-        @media (max-width: ${mobile}) {
-            font-size: 3em;
-            font-weight: 700;
-            margin: 0 44px;
-        }
         ${fonts.FONT_BOLD_15};
-        margin: 0;
+    
     }
 
     h3 {

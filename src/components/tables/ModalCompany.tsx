@@ -21,6 +21,7 @@ export const ModalCompany: FC<ModalCompanyProps> = ({isEdit, companyId}) => {
     const companies = useAppSelector((state) => state.companyReducer.companies);
     const company = !!companyId ? companies[companyId] : {} as CompanyTable;
 
+
     const [isModalOpen, setModalOpen] = useState(false);
     const [companyValue, setCompanyValue] = useState<Partial<CompanyTable>>(
         {
@@ -43,19 +44,21 @@ export const ModalCompany: FC<ModalCompanyProps> = ({isEdit, companyId}) => {
 
     const sendSave = () => {
 
-        const data = {
-            id: isEdit ? (companyId ?? '') : generateUniqId(),
-            title: companyValue.title ?? '',
-            address: companyValue.address ?? '',
-            checked: isEdit ? (companyValue?.checked ?? false) : false,
-            edit: false,
-            delete: false
-        };
+        const id = !!companyId && isEdit ? companyId : generateUniqId()
+            const data = {
+                id: id,
+                title: companyValue.title ?? '',
+                address: companyValue.address ?? '',
+                checked: isEdit ? (companyValue?.checked ?? false) : false,
+                edit: false,
+                delete: false
+            };
+
+
         isEdit ? updateCompany(data) : addCompany(data);
 
         closeModal();
         !isEdit && clearModal();
-
     };
 
     return (

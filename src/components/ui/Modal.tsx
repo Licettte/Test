@@ -81,8 +81,8 @@ export const Modal: FC<ModalProps> = ({
                 {title && <ModalHeader>{title}</ModalHeader>}
                 <div>{children}</div>
                 <ModalFooter>
-                    <Button onClick={onOk} height='20px'>{okText}</Button> {/* Теперь onOk на кнопке OK */}
-                    <Button onClick={onClose} height='20px'>{closeText}</Button> {/* Просто закрытие модалки */}
+                    <Button onClick={onOk} height='20px'>{okText}</Button>
+                    <Button onClick={onClose} height='20px'>{closeText}</Button>
                 </ModalFooter>
             </ModalContent>
         </ModalOverlay>,
