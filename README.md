@@ -7,8 +7,8 @@ $\text{\ \color{lightblue}\   Технологии:\}$
 ```java
 1. React
 2. TypeScript
-3. Styled-components
-4. React-router-dom
+3. Redux 
+4. Styled-components
 5. Concurrently
 6. Json-server
 ```
